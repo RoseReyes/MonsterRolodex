@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import './App.css';
 
-// resolving error should have a unique KEY prop 
-// by adding a unique identifier on each element being rendered
 class App extends Component {
   constructor() {
     super();
