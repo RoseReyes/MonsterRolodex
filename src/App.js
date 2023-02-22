@@ -8,6 +8,7 @@ class App extends Component {
     super();
     this.state = {
       monsters: [],
+      searchField: ''
     };
   }
 
@@ -24,19 +25,24 @@ class App extends Component {
   // 2. this runs after the constructor and render the initial UI
   // 4: get re-renders when the state object change
   render() {
+    // filter original list with the current search field
+    const filteredMonsters = this.state.monsters.filter((monster) => { 
+      return monster.name.toLocaleLowerCase().includes(this.state.searchField);
+    });
+
     return (
       <div className="App">
       <input className='search-box' type='search' placeholder='search monster' onChange={(event) => {
-          const filteredMonsters = this.state.monsters.filter((monster) => { 
-            return monster.name.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase());
-          });
-
-          this.setState(() => {
-              return { monsters: filteredMonsters}
-          });
-        }}
+         // get the new value of searchField
+         const searchField = event.target.value.toLocaleLowerCase();
+         // update the searchField  
+         this.setState(() => {
+              return { searchField }
+            }
+          );
+        }} 
       />
-      {this.state.monsters.map((monster) => {
+      {filteredMonsters.map((monster) => { // display filtered list
           return <div key={monster.id}><h1>{monster.name}</h1></div>;
       })}
       </div> 
