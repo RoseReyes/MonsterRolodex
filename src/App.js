@@ -29,7 +29,7 @@ class App extends Component {
   };
 
   render() {
-    // destructuring; it will remove calling this everywhere; cast it to variable
+    // cast it as variables to avoid using "this"
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
