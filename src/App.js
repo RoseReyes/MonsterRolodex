@@ -25,7 +25,7 @@ class App extends Component {
   // 2. this runs after the constructor and render the initial UI
   // 4: get re-renders when the state object change
   render() {
-    // filter original list with the current search field
+    
     const filteredMonsters = this.state.monsters.filter((monster) => { 
       return monster.name.toLocaleLowerCase().includes(this.state.searchField);
     });
@@ -33,7 +33,6 @@ class App extends Component {
     return (
       <div className="App">
       <input className='search-box' type='search' placeholder='search monster' onChange={(event) => {
-         // get the new value of searchField
          const searchField = event.target.value.toLocaleLowerCase();
          // update the searchField  
          this.setState(() => {
