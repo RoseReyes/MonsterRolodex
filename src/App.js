@@ -27,8 +27,7 @@ class App extends Component {
     const searchField = event.target.value.toLocaleLowerCase();
     this.setState(() => {
       return { searchField }
-    }
-    );
+    });
   };
 
   render() {
@@ -43,7 +42,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBox 
-          className={'search-box'}
+          className={'monsters-search-box'}
           placeholder={'search monster'}
           onChangeHandler={onSearchChange} 
         />
