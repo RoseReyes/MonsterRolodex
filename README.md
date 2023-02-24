@@ -26,3 +26,6 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Link for api used to generate monster's name, email, images
+https://jsonplaceholder.typicode.com/users
+
